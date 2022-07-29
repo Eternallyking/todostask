@@ -13,6 +13,8 @@
       backgroundColor="red"
       @click="clickfn"
       text="按钮"
+      borderRadius="10"
+      borderColor="pink"
     ></Button>
     <Button></Button>
   </div>

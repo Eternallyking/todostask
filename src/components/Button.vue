@@ -1,10 +1,9 @@
 <template>
   <div>
     <button
-      class="btn"
       @click="clickfn"
       :style="` width: ${width}px; height: ${height}px; background-color: ${backgroundColor}; color: ${color};
-      border-color: ${borderColor};`"
+      border-color: ${borderColor}; border-radius:${borderRadius}px`"
     >
       {{ text }}
     </button>
@@ -40,6 +39,10 @@ export default {
       type: String,
       default: () => "#000",
     },
+    borderRadius: {
+      type: String,
+      default: () => "5",
+    },
   },
   created() {},
 
@@ -52,8 +55,4 @@ export default {
 </script>
 
 <style scoped>
-.btn {
-  border-radius: 5px;
-  border-color: #000;
-}
 </style>
