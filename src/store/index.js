@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Peeling from './modules/Peeling'
 import todos from './modules/todos'
-// import careateVuexPersisted from 'vuex-persistedstate'
+import careateVuexPersisted from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
@@ -30,7 +30,14 @@ export default new Vuex.Store({
     Peeling,
     todos
   },
-  // plugins: [
-  //   careateVuexPersisted({})
-  // ]
+  plugins: [
+    careateVuexPersisted({
+      reducer(state) {
+        return {
+          todos: state.todos,
+          Peeling: state.Peeling
+        }
+      }
+    })
+  ]
 })
