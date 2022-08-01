@@ -17,6 +17,14 @@
       borderColor="pink"
     ></Button>
     <Button></Button>
+    <ProgressBar
+      width="500"
+      height="30"
+      progress="50%"
+      radius="50"
+      backgroundColor="pink"
+      color="green"
+    ></ProgressBar>
   </div>
 </template>
 
@@ -26,6 +34,7 @@ import TodoHeader from "./components/TodoHeader.vue"; // shift + alt + 下
 import TodoMain from "./components/TodoMain.vue"; // shift + alt + 下
 import { mapMutations } from "vuex";
 import Button from "./components/Button.vue";
+import ProgressBar from "./components/ProgressBar.vue";
 export default {
   data() {
     return {};
@@ -36,6 +45,7 @@ export default {
     TodoHeader,
     TodoMain,
     Button,
+    ProgressBar,
   },
 
   created() {},

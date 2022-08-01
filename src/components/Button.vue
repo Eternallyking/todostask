@@ -5,7 +5,7 @@
       :style="` width: ${width}px; height: ${height}px; background-color: ${backgroundColor}; color: ${color};
       border-color: ${borderColor}; border-radius:${borderRadius}px`"
     >
-      {{ text }}
+      <slot>{{ text }}</slot>
     </button>
   </div>
 </template>
@@ -54,5 +54,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
