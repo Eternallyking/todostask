@@ -5,15 +5,20 @@
   >
     <div
       class="main"
-      :style="`width: ${progress};height:${height}px; border-radius: ${radius}px; background-color:${color}`"
-    ></div>
+      :style="`width: ${progresss}%;height:${height}px; border-radius: ${radius}px; background-color:${colors}`"
+    >
+      {{ progresss }}%
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      progresss: this.progress,
+      colors: this.color,
+    };
   },
   props: {
     width: {
@@ -36,7 +41,17 @@ export default {
     },
   },
 
-  created() {},
+  created() {
+    const timer = setInterval(() => {
+      if (this.progresss == "100") {
+        clearInterval(timer);
+        this.colors = "green";
+        this.$emit("finish");
+        return;
+      }
+      this.progresss = this.progresss - 0 + 1;
+    }, 100);
+  },
 
   methods: {},
 };
@@ -59,5 +74,8 @@ export default {
   width: 100px;
   background-color: red;
   border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

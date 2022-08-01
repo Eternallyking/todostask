@@ -20,10 +20,11 @@
     <ProgressBar
       width="500"
       height="30"
-      progress="50%"
+      progress="50"
       radius="50"
-      backgroundColor="pink"
-      color="green"
+      backgroundColor="#000"
+      color="red"
+      @finish="fn"
     ></ProgressBar>
   </div>
 </template>
@@ -56,6 +57,9 @@ export default {
       this.$store.dispatch("asyncPeeling", index);
     },
     clickfn() {
+      console.log(1);
+    },
+    fn() {
       console.log(1);
     },
   },
